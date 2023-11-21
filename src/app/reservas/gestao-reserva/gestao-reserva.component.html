@@ -1,0 +1,148 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light p-2">
+  <div class="container">
+    <a href="" class="navbar-brand d-flex align-items-center">
+      <img src="../img/logo.webp" />
+      <p class="offset-3 text-center">Gerencia pousada</p>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#menuNavbar"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="menuNavbar">
+      <div>
+        <a href="../adicionar-reserva/">
+          <button class="btn btn-light" id="cadastro_usuario">
+            Cadastrar reserva
+          </button>
+        </a>
+        <a href="../editar-reserva/">
+          <button class="btn btn-light" id="atualizar_usuario">
+            Atualizar reserva
+          </button>
+        </a>
+        <a href="../editar-reserva/">
+          <button class="btn btn-light active" id="atualizar_usuario">
+            Gestao reserva
+          </button>
+        </a>
+
+        <a href="../../dashboard" class="text-decoration-none">
+          <button class="btn btn-light" id="home">Voltar pra a Home</button>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<br />
+<div class="tableFixHead">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th class="col-xs-3">id</th>
+        <th class="col-xs-3">Acomodação</th>
+        <th class="col-xs-3">Hóspede</th>
+        <th class="col-xs-3">Entrada</th>
+        <th class="col-xs-3">Saída</th>
+        <th class="col-xs-3">Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dado of listaDeReservas">
+        <td class="col-xs-3">{{ dado.id }}</td>
+        <td
+          class="col-xs-3"
+          (click)="recuperaDadosAcomodacao(dado.acomodacao.id)"
+        >
+          {{ dado.acomodacao.numero }}
+        </td>
+        <td class="col-xs-3" (click)="recuperaDadosHospede(dado.hospede.id)">
+          {{ dado.hospede.nome }}
+        </td>
+        <td class="col-xs-3">{{ dado.dataEntrada }}</td>
+        <td class="col-xs-3">{{ dado.dataSaida }}</td>
+        <td class="col-xs-3">
+          <button
+            type="button"
+            class="btn btn-outline-secondary me-3"
+            style="
+              --bs-btn-padding-y: 0.25rem;
+              --bs-btn-padding-x: 0.5rem;
+              --bs-btn-font-size: 0.75rem;
+            "
+            (click)="selectedIdBtn(dado.id)"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            Excluir
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-secondary me-3"
+            style="
+              --bs-btn-padding-y: 0.25rem;
+              --bs-btn-padding-x: 0.5rem;
+              --bs-btn-font-size: 0.75rem;
+            "
+            (click)="editarBtn(dado.id)"
+          >
+            Editar
+          </button>
+        </td>
+      </tr>
+    </tbody>
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              Confirmar Exclusão
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            Deseja realmente excluir a acomodação Id: {{ selectedId }}?
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancelar
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              (click)="deleteBtn(selectedId)"
+              data-bs-dismiss="modal"
+            >
+              Excluir
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </table>
+</div>
+
+<footer
+  class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"
+>
+  <p class="col-md-4 mb-0 text-muted">&copy; 2022 Company, Inc</p>
+</footer>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <!-- Precisa implementar essa funcionalidade -->
+    <!-- <h1>Login Screen</h1>
+    <form>
+      <div>
+        <label for="inputUserEmail">Email</label><br />
+        <input
+          type="email"
+          name="inputUserEmail"
+          [(ngModel)]="inputUserEmail"
+        /><br /><br />
+        <label for="inputUserPassword">Senha</label><br />
+        <input
+          type="password"
+          name="inputUserPassword"
+          [(ngModel)]="inputUserPassword"
+        /><br /><br />
+      </div>
+      <button id="Entrar" (click)="clickme()">Entrar</button>
+    </form>
+    <br /><br />
+    <button (click)="telaSignUp()">Registrar</button>-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light p-2">
+      <div class="container">
+        <a href="" class="navbar-brand d-flex align-items-center">
+          <img src="../img/logo.webp" />
+          <p class="offset-3 text-center">Login de Usuario</p>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menuNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="menuNavbar"
+        >
+          <div>
+            <a href="./cadastro_usuario.html">
+              <button class="btn btn-light active" id="cadastro_usuario">
+                Cadastrar usuário
+              </button>
+            </a>
+
+            <a href="../dashboard/" class="text-decoration-none">
+              <button class="btn btn-light" id="home">Voltar pra a Home</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-9 vh-100">
+          <form
+            method="post"
+            class="needs-validation"
+            id="formCadastroUsuario"
+            novalidate
+          >
+            <div class="row mt-3 p-3 g-2 text-black">
+              <div class="col-6">
+                <label for="inputUserEmail" class="form-label">Email</label
+                ><br />
+                <input
+                  type="email"
+                  name="inputUserEmail"
+                  class="form-control"
+                  [(ngModel)]="inputUserEmail"
+                /><br /><br />
+              </div>
+              <div class="col-6">
+                <label for="inputUserPassword" class="form-label">Senha</label
+                ><br />
+                <input
+                  type="password"
+                  name="inputUserPassword"
+                  class="form-control"
+                  [(ngModel)]="inputUserPassword"
+                /><br /><br />
+                <div class="invalid-feedback text-black text-lg-center">
+                  Informar uma senha com ao menos 5 caracteres alfanumericos,
+                  exemplo: Ypua2023
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="form-switch form-check form-check-inline">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    checked
+                    id="ativo"
+                  />
+                  <label for="ativo" class="form-check-label"
+                    >Usuário ativo</label
+                  >
+                </div>
+                <div class="form-switch form-check form-check-inline"></div>
+              </div>
+            </div>
+            <div class="text-center">
+              <button
+                class="btn btn-lg btn-dark"
+                id="Entrar"
+                (click)="clickme()"
+              >
+                Login
+              </button>
+              <br />
+              <br />
+              <button class="btn btn-lg btn-dark" (click)="telaSignUp()">
+                Registrar
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="col-3">
+          <div class="row">
+            <div class="col">
+              <div class="card mt-5 g-2">
+                <div class="card-body">
+                  <p>
+                    Aqui voce irá fazer o login com suas informações para ter
+                    acesso ao sistema.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,191 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light p-2">
+  <div class="container">
+    <a href="" class="navbar-brand d-flex align-items-center">
+      <img src="../img/logo.webp" />
+      <p class="offset-3 text-center">Cadastro de Reserva</p>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#menuNavbar"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="menuNavbar">
+      <div>
+        <a href="../adicionar-hospede/">
+          <button class="btn btn-light active" id="cadastro_usuario">
+            Cadastrar reserva
+          </button>
+        </a>
+        <a href="../editar-reserva/">
+          <button class="btn btn-light" id="atualizar_usuario">
+            Atualizar reserva
+          </button>
+        </a>
+        <a href="../gestao-reserva/">
+          <button class="btn btn-light" id="atualizar_usuario">
+            Gestao Reserva
+          </button>
+        </a>
+
+        <a href="../../dashboard" class="text-decoration-none">
+          <button class="btn btn-light" id="home">Voltar pra a Home</button>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <p class="text-center">Cadastrar Reserva</p>
+</div>
+
+<div class="container">
+  <div class="input-group mb-3 date">
+    <span class="input-group-text col-2" id="basic-addon1"
+      >Data de Entrada</span
+    >
+    <input
+      [(ngModel)]="dataEntrada"
+      class="form-control"
+      placeholder="Data de Entrada"
+      aria-label="Data de Entrada"
+      aria-describedby="basic-addon1"
+      type="date"
+      min="{{ dataEntradaMin | date : 'yyyy-MM-dd' }}"
+      (input)="ajustaDataSaidaMin()"
+    />
+
+    <span class="input-group-text col-2" id="basic-addon1">Data de Saída</span>
+    <input
+      [(ngModel)]="dataSaida"
+      class="form-control"
+      placeholder="Data de Saída"
+      aria-label="Data de Saída"
+      aria-describedby="basic-addon1"
+      type="date"
+      min="{{ dataSaidaMin | date : 'yyyy-MM-dd' }}"
+      id="dataSaida"
+    />
+  </div>
+  <div class="input-group mb-3">
+    <button
+      class="btn btn-outline-secondary col-2"
+      type="button"
+      id="button-addon1"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+    >
+      Hóspede
+    </button>
+    <input
+      [(ngModel)]="nomeHospede"
+      type="text"
+      class="form-control"
+      placeholder="Nome do Hóspede"
+      aria-label="Nome do Hóspede"
+      aria-describedby="button-addon1"
+      disabled
+    />
+  </div>
+
+  <div class="input-group mb-3">
+    <span class="input-group-text col-2" id="basic-addon1">No. Hóspedes</span>
+    <input
+      [(ngModel)]="quantidadePessoas"
+      class="form-control"
+      placeholder="Quantidade Hóspedes"
+      aria-label="Quantidade de hóspedes"
+      aria-describedby="basic-addon1"
+      type="number"
+    />
+  </div>
+  <div class="input-group mb-3">
+    <span class="input-group-text col-2" id="basic-addon1">No. Acomodação</span>
+    <input
+      [(ngModel)]="numeroAcomodacao"
+      class="form-control"
+      placeholder="Número da Acomodação"
+      aria-label="Número da Acomodação"
+      aria-describedby="basic-addon1"
+      type="number"
+    />
+  </div>
+
+  <div class="input-group mb-3">
+    <span class="input-group-text col-2" id="basic-addon1">Diária R$</span>
+    <input
+      [(ngModel)]="valorDiaria"
+      class="form-control"
+      placeholder="Valor da Diária"
+      aria-label="Valor da Diária"
+      aria-describedby="basic-addon1"
+      type="number"
+    />
+  </div>
+
+  <button
+    type="button"
+    class="btn btn-primary me-3"
+    (click)="cadastrarReserva()"
+  >
+    Cadastrar
+  </button>
+  <button
+    type=" button"
+    class="btn btn-primary me-3"
+    (click)="goGestaoReserva()"
+  >
+    Cancelar
+  </button>
+
+  <div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">
+            Selecione o nome do hóspede
+          </h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <select
+            class="form-select"
+            size="10"
+            aria-label="Size 3 select example"
+            id="listaHospedes"
+          >
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Cancelar
+          </button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+            Excluir
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

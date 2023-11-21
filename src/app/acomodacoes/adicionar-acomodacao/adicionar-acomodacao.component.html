@@ -1,0 +1,170 @@
+<!-- <div class="container">
+  <p class="text-center">Cadastrar Acomodação</p>
+</div>
+<div class="container">
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">Número</span>
+    <input
+      [(ngModel)]="numero"
+      class="form-control"
+      placeholder="Número da acomodação"
+      aria-label="Número da acomodação"
+      aria-describedby="basic-addon1"
+    />
+  </div>
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">Capacidade</span>
+    <input
+      [(ngModel)]="capacidade"
+      class="form-control"
+      placeholder="Capacidade de hóspedes"
+      aria-label="Capacidade de hóspedes"
+      aria-describedby="basic-addon1"
+    />
+  </div>
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">Camas</span>
+    <input
+      [(ngModel)]="camas"
+      class="form-control"
+      placeholder="Quantidade de camas"
+      aria-label="Quantidade de camas"
+      aria-describedby="basic-addon1"
+    />
+  </div>
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">Valor da Diária</span>
+    <input
+      [(ngModel)]="valorDiaria"
+      class="form-control"
+      placeholder="Valor da diária"
+      aria-label="Valor da diária"
+      aria-describedby="basic-addon1"
+    />
+  </div>
+
+  <button
+    type="button"
+    class="btn btn-primary me-3"
+    (click)="cadastrarAcomodacao()"
+  >
+    Cadastrar
+  </button>
+  <button
+    type="button"
+    class="btn btn-primary me-3"
+    (click)="goGestaoAcomodacao()"
+  >
+    Cancelar
+  </button>
+</div>-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light p-2">
+  <div class="container">
+    <a href="" class="navbar-brand d-flex align-items-center">
+      <img src="../img/logo.webp" />
+      <p class="offset-3 text-center">Cadastrar Acomodações</p>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#menuNavbar"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="menuNavbar">
+      <div>
+        <a href="./cadastrarAcomodacao.html">
+          <button class="btn btn-light active" id="cadastro_usuario">
+            Cadastrar Acomodações
+          </button>
+        </a>
+        <a href="../editar-acomodacao/">
+          <button class="btn btn-light" id="cadastro_usuario">
+            Editar Acomodações
+          </button>
+        </a>
+        <a href="../gestao-acomodacao/">
+          <button class="btn btn-light" id="cadastro_usuario">
+            Relatorio Acomodações
+          </button>
+        </a>
+        <a href="../../dashboard/" class="text-decoration-none">
+          <button class="btn btn-light" id="home">Voltar pra a Home</button>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 vh-100">
+      <div class="row mt-2 p-8 g-2 text-black">
+        <div class="col-12">
+          <span class="input-group-text" id="basic-addon1">Número</span>
+          <input
+            [(ngModel)]="numero"
+            class="form-control"
+            placeholder="Número da acomodação"
+            aria-label="Número da acomodação"
+            aria-describedby="basic-addon1"
+          />
+          <div class="invalid-feedback text-black text-lg-center"></div>
+        </div>
+        <div class="col-12">
+          <span class="input-group-text" id="basic-addon1">Camas</span>
+          <input
+            [(ngModel)]="camas"
+            class="form-control"
+            placeholder="Quantidade de camas"
+            aria-label="Quantidade de camas"
+            aria-describedby="basic-addon1"
+          />
+        </div>
+
+        <div class="col-12">
+          <span class="input-group-text" id="basic-addon1">Capacidade</span>
+          <input
+            [(ngModel)]="capacidade"
+            class="form-control"
+            placeholder="Capacidade de hóspedes"
+            aria-label="Capacidade de hóspedes"
+            aria-describedby="basic-addon1"
+          />
+          <div class="invalid-feedback text-black text-lg-center">
+            Informe a quantidade de pessoas
+          </div>
+        </div>
+        <div class="col-12">
+          <span class="input-group-text" id="basic-addon1"
+            >Valor da Diária</span
+          >
+          <input
+            [(ngModel)]="valorDiaria"
+            class="form-control"
+            placeholder="Valor da diária"
+            aria-label="Valor da diária"
+            aria-describedby="basic-addon1"
+          />
+          <div class="invalid-feedback text-black text-lg-center">
+            Informar a quantidade de camas
+          </div>
+        </div>
+      </div>
+      <button
+        type="button"
+        class="btn btn-primary me-3"
+        (click)="cadastrarAcomodacao()"
+      >
+        Cadastrar
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary me-3"
+        (click)="goGestaoAcomodacao()"
+      >
+        Relatorio
+      </button>
+    </div>
+  </div>
+</div>
